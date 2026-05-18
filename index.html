@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hairiyo</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#000;color:#f5f5f7;scroll-behavior:smooth}
+nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:64px;z-index:999;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-text{font-size:1.2rem;font-weight:600;letter-spacing:2px;color:#f5f5f7;text-transform:uppercase}
+nav ul{list-style:none;display:flex;gap:30px}
+nav ul li a{text-decoration:none;color:#a1a1a6;font-size:.85rem;transition:color .3s}
+nav ul li a:hover{color:#f5f5f7}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 20px;background:radial-gradient(ellipse at center,#1a1a2e 0%,#000 70%)}
+.hero-logo{margin-bottom:32px;animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero h1{font-size:5rem;font-weight:700;letter-spacing:-2px;line-height:1.1;background:linear-gradient(135deg,#fff 0%,#a0a0a0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{margin-top:20px;font-size:1.3rem;color:#a1a1a6;max-width:500px;line-height:1.6}
+.hero .btn{margin-top:40px;padding:14px 32px;background:#fff;color:#000;border-radius:980px;text-decoration:none;font-size:.95rem;font-weight:500;transition:background .3s,transform .2s}
+.hero .btn:hover{background:#e0e0e0;transform:scale(1.04)}
+.section{padding:100px 40px;max-width:900px;margin:0 auto;text-align:center}
+.section h2{font-size:2.8rem;font-weight:700;letter-spacing:-1px;color:#f5f5f7}
+.section p{margin-top:20px;font-size:1.1rem;color:#a1a1a6;line-height:1.8}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:60px 40px;max-width:1100px;margin:0 auto}
+.card{background:#1c1c1e;border-radius:20px;padding:40px 30px;text-align:left;border:1px solid rgba(255,255,255,.07);transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.2)}
+.card .icon{font-size:2rem;margin-bottom:16px}
+.card h3{font-size:1.2rem;font-weight:600;color:#f5f5f7;margin-bottom:10px}
+.card p{font-size:.9rem;color:#a1a1a6;line-height:1.6}
+.divider{border:none;border-top:1px solid rgba(255,255,255,.08);margin:0 40px}
+footer{text-align:center;padding:40px 20px;color:#6e6e73;font-size:.8rem;display:flex;flex-direction:column;align-items:center;gap:12px}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="#">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#888888"/></linearGradient></defs>
+      <circle cx="16" cy="16" r="15" stroke="url(#g1)" stroke-width="1.5" fill="none"/>
+      <text x="16" y="21" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="13" font-weight="700" fill="url(#g1)">H</text>
+    </svg>
+    <span class="nav-logo-text">Hairiyo</span>
+  </a>
+  <ul>
+    <li><a href="#about">Ueber mich</a></li>
+    <li><a href="#features">Bereiche</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-logo">
+    <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad-big" x1="0" y1="0" x2="110" y2="110" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#555555"/></linearGradient>
+        <linearGradient id="grad-ring" x1="0" y1="0" x2="110" y2="110" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/><stop offset="100%" stop-color="#333333" stop-opacity="0.3"/></linearGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <circle cx="55" cy="55" r="52" stroke="url(#grad-ring)" stroke-width="1" fill="none"/>
+      <circle cx="55" cy="55" r="44" stroke="url(#grad-ring)" stroke-width="0.5" fill="none" opacity="0.4"/>
+      <circle cx="55" cy="55" r="40" fill="rgba(255,255,255,0.03)"/>
+      <text x="55" y="72" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="54" font-weight="700" fill="url(#grad-big)" filter="url(#glow)">H</text>
+      <circle cx="82" cy="82" r="4" fill="white" opacity="0.7"/>
+      <circle cx="82" cy="82" r="2" fill="white"/>
+    </svg>
+  </div>
+  <h1>Hairiyo</h1>
+  <p>Willkommen auf meiner persoenlichen Homepage. Minimalistisch. Modern. Ich.</p>
+  <a href="#about" class="btn">Mehr erfahren</a>
+</section>
+<hr class="divider"/>
+<section class="section" id="about">
+  <h2>Ueber mich</h2>
+  <p>Hier kannst du etwas ueber dich schreiben - wer du bist, was dich interessiert, was dich antreibt. Kurz, klar und persoenlich.</p>
+</section>
+<hr class="divider"/>
+<section id="features">
+  <div class="cards">
+    <div class="card"><div class="icon">&#127919;</div><h3>Ziele</h3><p>Was moechtest du erreichen? Trag hier deine Visionen und Ziele ein.</p></div>
+    <div class="card"><div class="icon">&#128161;</div><h3>Interessen</h3><p>Was begeistert dich? Deine Hobbys, Leidenschaften und Themen.</p></div>
+    <div class="card"><div class="icon">&#128640;</div><h3>Projekte</h3><p>Zeige deine Projekte, Ideen oder Errungenschaften der Welt.</p></div>
+  </div>
+</section>
+<hr class="divider"/>
+<section class="section" id="contact">
+  <h2>Kontakt</h2>
+  <p>Du erreichst mich unter:<br/><br/><a href="mailto:deine@email.de" style="color:#0a84ff;text-decoration:none">deine@email.de</a></p>
+</section>
+<footer>
+  <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#6e6e73" stroke-width="1.5" fill="none"/><text x="16" y="21" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="13" font-weight="700" fill="#6e6e73">H</text></svg>
+  <p>&copy; 2026 Hairiyo. Alle Rechte vorbehalten.</p>
+</footer>
+</body>
+</html>
